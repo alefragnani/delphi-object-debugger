@@ -12,7 +12,8 @@ interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, TypInfo, ExtCtrls, Grids,
-  Buttons, Menus, ComCtrls, Vcl.WinXCtrls, System.ImageList, Vcl.ImgList;
+  Buttons, Menus, ComCtrls, Vcl.WinXCtrls, System.ImageList, Vcl.ImgList,
+  ObjectDebugger.ClickDetector;
 
 ////// component //////
 
@@ -26,11 +27,16 @@ type
 
     FAllowFormClose: Boolean;
     FOnClose: TNotifyEvent;
+
+    FClickDetector: TClickDetector;
+
     procedure SetActive(const Value: Boolean);
   public
     constructor Create (AOwner: TComponent); override;
     destructor Destroy; override;
+
     procedure Show;
+    procedure CreateClickDetector;
   published
     property OnTop: Boolean
       read fOnTop write fOnTop;
@@ -631,11 +637,29 @@ destructor TCantObjectDebugger.Destroy;
 begin
   if Assigned(FOnClose) then
     FOnClose(Self);
+
+  FClickDetector := nil;
   Created := False;
 
   inherited;
 end;
 
+procedure TCantObjectDebugger.SetActive(const Value: Boolean);
+begin
+  FActive := Value;
+end;
+
+procedure TCantObjectDebugger.CreateClickDetector;
+begin
+  FClickDetector := TClickDetector.Create(CantObjDebForm);
+end;
+
+procedure TCantObjectDebugger.Show;
+begin
+  CantObjDebForm.Show;
+  CantObjDebForm.UpdateFormsCombo;
+  FActive := True;
+end;
 
 procedure Register;
 begin
@@ -1415,6 +1439,8 @@ end;
 procedure TCantObjDebForm.FormShow(Sender: TObject);
 begin
   UpdateFormsCombo;
+
+  ODebugger.CreateClickDetector;
 end;
 
 procedure TCantObjDebForm.TopMost1Click(Sender: TObject);
@@ -1488,16 +1514,5 @@ begin
   EditModified := True;
 end;
 
-procedure TCantObjectDebugger.SetActive(const Value: Boolean);
-begin
-  FActive := Value;
-end;
-
-procedure TCantObjectDebugger.Show;
-begin
-  CantObjDebForm.Show;
-  CantObjDebForm.UpdateFormsCombo;
-  FActive := True;
-end;
 
 end.
