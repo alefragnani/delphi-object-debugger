@@ -87,6 +87,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ObjectDebugger.ClickDetector.pas"/>
+        <DCCReference Include="ObjectDebugger.Inspector.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

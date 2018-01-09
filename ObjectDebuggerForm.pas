@@ -13,7 +13,7 @@ uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, TypInfo, ExtCtrls, Grids,
   Buttons, Menus, ComCtrls, Vcl.WinXCtrls, System.ImageList, Vcl.ImgList,
-  ObjectDebugger.ClickDetector;
+  ObjectDebugger.ClickDetector, ObjectDebugger.Inspector;
 
 ////// component //////
 
@@ -55,7 +55,7 @@ procedure Register;
 ////// form //////
 
 type
-  TCantObjDebForm = class(TForm)
+  TCantObjDebForm = class(TForm, IObjectInspector)
     ColorDialog1: TColorDialog;
     FontDialog1: TFontDialog;
     PageControl1: TPageControl;
@@ -155,6 +155,8 @@ type
     procedure UpdateData;
     procedure EditStringList (Str: TStrings);
     procedure AddToCombo (const S: String);
+
+    procedure Inspect(control: TControl);
   end;
 
 var
@@ -651,7 +653,7 @@ end;
 
 procedure TCantObjectDebugger.CreateClickDetector;
 begin
-  FClickDetector := TClickDetector.Create(CantObjDebForm);
+  FClickDetector := TClickDetector.Create(CantObjDebForm, CantobjDebForm);
 end;
 
 procedure TCantObjectDebugger.Show;
@@ -700,6 +702,18 @@ end;
 procedure TCantObjDebForm.AddToCombo (const S: String);
 begin
   Combo.Items.Add (S);
+end;
+
+procedure TCantObjDebForm.Inspect(control: TControl);
+var
+  nIdx: integer;
+begin
+  if control = nil then
+    exit;
+
+  nIdx := cbComps.Items.IndexOf(control.Name + ': ' + control.ClassName);
+  if nIdx > -1 then
+    cbComps.ItemIndex := nIdx;
 end;
 
 {fill the FormsCombo with the names of the forms of the
