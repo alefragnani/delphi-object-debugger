@@ -2,7 +2,7 @@
     <PropertyGroup>
         <ProjectGuid>{59242146-AC8D-4348-B5AB-917C71977666}</ProjectGuid>
         <MainSource>ObjectDebugger.dpk</MainSource>
-        <ProjectVersion>18.2</ProjectVersion>
+        <ProjectVersion>18.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
