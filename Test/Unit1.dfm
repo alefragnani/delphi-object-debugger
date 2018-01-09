@@ -68,7 +68,6 @@ object Form1: TForm1
   object CantObjectDebugger1: TCantObjectDebugger
     OnTop = False
     Copyright = 'Marco Cant'#249' 1996-2016'
-    ShowOnStartup = False
     Left = 344
     Top = 16
   end
