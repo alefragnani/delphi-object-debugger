@@ -713,7 +713,10 @@ begin
 
   nIdx := cbComps.Items.IndexOf(control.Name + ': ' + control.ClassName);
   if nIdx > -1 then
+  begin
     cbComps.ItemIndex := nIdx;
+    cbCompsChange(cbComps);
+  end;
 end;
 
 {fill the FormsCombo with the names of the forms of the

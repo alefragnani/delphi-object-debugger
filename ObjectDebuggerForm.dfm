@@ -28,8 +28,6 @@ object CantObjDebForm: TCantObjDebForm
     Align = alClient
     TabOrder = 2
     OnChange = PageControl1Change
-    ExplicitTop = 86
-    ExplicitHeight = 226
     object TabSheet1: TTabSheet
       Caption = 'Properties'
       ExplicitLeft = 0
@@ -188,7 +186,6 @@ object CantObjDebForm: TCantObjDebForm
     end
     object TabSheet3: TTabSheet
       Caption = 'Data'
-      ExplicitHeight = 197
       object sgData: TStringGrid
         Left = 0
         Top = 0
@@ -206,7 +203,6 @@ object CantObjDebForm: TCantObjDebForm
         TabOrder = 0
         OnMouseDown = sgMouseDown
         OnSelectCell = sgDataSelectCell
-        ExplicitHeight = 197
         ColWidths = (
           109
           120)
@@ -332,7 +328,7 @@ object CantObjDebForm: TCantObjDebForm
     Left = 196
     Top = 150
     Bitmap = {
-      494C010102000800400010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800440010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
