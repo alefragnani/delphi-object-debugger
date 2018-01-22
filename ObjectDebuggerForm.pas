@@ -1,11 +1,27 @@
-unit ObjectDebuggerForm;
+ï»¿unit ObjectDebuggerForm;
 
+{ ******************************* }
+{         ORIGINAL AUTHOR         }
 { ******************************* }
 {    Delphi ObjectDebugger        }
 {    MPL 2.0 License              }
 {    Copyright 2016 Marco Cantu   }
 {    marco.cantu@gmail.com        }
 { ******************************* }
+
+{ ************************************************************************************************ }
+{                                        CONTRIBUTIONS                                             }
+{ ************************************************************************************************ }
+{    MPL 2.0 License                                                                               }
+{    Copyright 2016-2018 Alessandro Fragnani                                                       }
+{    github.com/alefragnani                                                                        }
+{      * ShowOnStartup Property        (https://github.com/marcocantu/ObjectDebugger/pull/1)       }
+{      * Berlin Support                (https://github.com/marcocantu/ObjectDebugger/pull/3)       }
+{      * Filter Properties/Events/Data (https://github.com/marcocantu/ObjectDebugger/pull/4)       }
+{      * Tokyo Support                 (https://github.com/marcocantu/ObjectDebugger/pull/5)       }
+{      * Allow Form Close              (https://github.com/marcocantu/ObjectDebugger/pull/6)       }
+{      * Hex Color                     (https://github.com/marcocantu/ObjectDebugger/pull/7)       }
+{ ************************************************************************************************ }
 
 interface
 
@@ -171,8 +187,8 @@ uses
 
 const
   VersionDescription = 'Object Debugger for Delphi';
-  VersionRelease = 'Release 5.20';
-  CopyrightString = 'Marco Cantù 1996-2016';
+  VersionRelease = 'Release 6.00';
+  CopyrightString = 'Marco Cantï¿½ 1996-2016 / Alessandro Fragnani 2016-2018';
 
 /////////// support code //////////////
 
