@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.StdCtrls, ObjectDebuggerForm;
+  Vcl.StdCtrls, ObjectDebuggerForm, Vcl.ExtCtrls, Vcl.ComCtrls;
 
 type
   TForm1 = class(TForm)
@@ -14,6 +14,21 @@ type
     DBGrid1: TDBGrid;
     Button2: TButton;
     CantObjectDebugger1: TCantObjectDebugger;
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    Edit2: TEdit;
+    Button3: TButton;
+    DBGrid2: TDBGrid;
+    Panel1: TPanel;
+    Button4: TButton;
+    Edit3: TEdit;
+    Panel2: TPanel;
+    Button5: TButton;
+    Edit4: TEdit;
+    Button6: TButton;
+    Edit5: TEdit;
+    DBGrid3: TDBGrid;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private

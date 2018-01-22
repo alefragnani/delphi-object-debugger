@@ -34,6 +34,8 @@ requires
   vclwinx;
 
 contains
-  ObjectDebuggerForm in 'ObjectDebuggerForm.pas' {CantObjDebForm};
+  ObjectDebuggerForm in 'ObjectDebuggerForm.pas' {CantObjDebForm},
+  ObjectDebugger.ClickDetector in 'ObjectDebugger.ClickDetector.pas',
+  ObjectDebugger.Inspector in 'ObjectDebugger.Inspector.pas';
 
 end.

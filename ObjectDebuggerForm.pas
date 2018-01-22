@@ -1,5 +1,7 @@
-unit ObjectDebuggerForm;
+ï»¿unit ObjectDebuggerForm;
 
+{ ******************************* }
+{         ORIGINAL AUTHOR         }
 { ******************************* }
 {    Delphi ObjectDebugger        }
 {    MPL 2.0 License              }
@@ -7,12 +9,27 @@ unit ObjectDebuggerForm;
 {    marco.cantu@gmail.com        }
 { ******************************* }
 
+{ ************************************************************************************************ }
+{                                        CONTRIBUTIONS                                             }
+{ ************************************************************************************************ }
+{    MPL 2.0 License                                                                               }
+{    Copyright 2016-2018 Alessandro Fragnani                                                       }
+{    github.com/alefragnani                                                                        }
+{      * ShowOnStartup Property        (https://github.com/marcocantu/ObjectDebugger/pull/1)       }
+{      * Berlin Support                (https://github.com/marcocantu/ObjectDebugger/pull/3)       }
+{      * Filter Properties/Events/Data (https://github.com/marcocantu/ObjectDebugger/pull/4)       }
+{      * Tokyo Support                 (https://github.com/marcocantu/ObjectDebugger/pull/5)       }
+{      * Allow Form Close              (https://github.com/marcocantu/ObjectDebugger/pull/6)       }
+{      * Hex Color                     (https://github.com/marcocantu/ObjectDebugger/pull/7)       }
+{ ************************************************************************************************ }
+
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls,
   Forms, Dialogs, StdCtrls, TypInfo, ExtCtrls, Grids,
-  Buttons, Menus, ComCtrls, Vcl.WinXCtrls, System.ImageList, Vcl.ImgList;
+  Buttons, Menus, ComCtrls, Vcl.WinXCtrls, System.ImageList, Vcl.ImgList,
+  ObjectDebugger.ClickDetector, ObjectDebugger.Inspector;
 
 ////// component //////
 
@@ -26,11 +43,16 @@ type
 
     FAllowFormClose: Boolean;
     FOnClose: TNotifyEvent;
+
+    FClickDetector: TClickDetector;
+
     procedure SetActive(const Value: Boolean);
   public
     constructor Create (AOwner: TComponent); override;
     destructor Destroy; override;
+
     procedure Show;
+    procedure CreateClickDetector;
   published
     property OnTop: Boolean
       read fOnTop write fOnTop;
@@ -49,7 +71,7 @@ procedure Register;
 ////// form //////
 
 type
-  TCantObjDebForm = class(TForm)
+  TCantObjDebForm = class(TForm, IObjectInspector)
     ColorDialog1: TColorDialog;
     FontDialog1: TFontDialog;
     PageControl1: TPageControl;
@@ -149,6 +171,8 @@ type
     procedure UpdateData;
     procedure EditStringList (Str: TStrings);
     procedure AddToCombo (const S: String);
+
+    procedure Inspect(control: TControl);
   end;
 
 var
@@ -163,8 +187,8 @@ uses
 
 const
   VersionDescription = 'Object Debugger for Delphi';
-  VersionRelease = 'Release 5.40';
-  CopyrightString = 'Marco Cantù 1996-2016';
+  VersionRelease = 'Release 6.00';
+  CopyrightString = 'Marco Cantï¿½ 1996-2016 / Alessandro Fragnani 2016-2018';
 
 /////////// support code //////////////
 
@@ -631,11 +655,29 @@ destructor TCantObjectDebugger.Destroy;
 begin
   if Assigned(FOnClose) then
     FOnClose(Self);
+
+  FClickDetector := nil;
   Created := False;
 
   inherited;
 end;
 
+procedure TCantObjectDebugger.SetActive(const Value: Boolean);
+begin
+  FActive := Value;
+end;
+
+procedure TCantObjectDebugger.CreateClickDetector;
+begin
+  FClickDetector := TClickDetector.Create(CantObjDebForm, CantobjDebForm);
+end;
+
+procedure TCantObjectDebugger.Show;
+begin
+  CantObjDebForm.Show;
+  CantObjDebForm.UpdateFormsCombo;
+  FActive := True;
+end;
 
 procedure Register;
 begin
@@ -676,6 +718,21 @@ end;
 procedure TCantObjDebForm.AddToCombo (const S: String);
 begin
   Combo.Items.Add (S);
+end;
+
+procedure TCantObjDebForm.Inspect(control: TControl);
+var
+  nIdx: integer;
+begin
+  if control = nil then
+    exit;
+
+  nIdx := cbComps.Items.IndexOf(control.Name + ': ' + control.ClassName);
+  if nIdx > -1 then
+  begin
+    cbComps.ItemIndex := nIdx;
+    cbCompsChange(cbComps);
+  end;
 end;
 
 {fill the FormsCombo with the names of the forms of the
@@ -1421,6 +1478,8 @@ end;
 procedure TCantObjDebForm.FormShow(Sender: TObject);
 begin
   UpdateFormsCombo;
+
+  ODebugger.CreateClickDetector;
 end;
 
 procedure TCantObjDebForm.TopMost1Click(Sender: TObject);
@@ -1494,16 +1553,5 @@ begin
   EditModified := True;
 end;
 
-procedure TCantObjectDebugger.SetActive(const Value: Boolean);
-begin
-  FActive := Value;
-end;
-
-procedure TCantObjectDebugger.Show;
-begin
-  CantObjDebForm.Show;
-  CantObjDebForm.UpdateFormsCombo;
-  FActive := True;
-end;
 
 end.

@@ -18,18 +18,22 @@ object CantObjDebForm: TCantObjDebForm
   OnResize = FormResize
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object PageControl1: TPageControl
     Left = 0
-    Top = 86
+    Top = 87
     Width = 274
-    Height = 226
+    Height = 225
     ActivePage = TabSheet3
     Align = alClient
     TabOrder = 2
     OnChange = PageControl1Change
     object TabSheet1: TTabSheet
       Caption = 'Properties'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object ListSet: TListBox
         Left = 88
         Top = 112
@@ -106,7 +110,7 @@ object CantObjDebForm: TCantObjDebForm
         Left = 0
         Top = 0
         Width = 266
-        Height = 198
+        Height = 196
         Align = alClient
         Color = clBtnFace
         ColCount = 2
@@ -120,6 +124,7 @@ object CantObjDebForm: TCantObjDebForm
         OnDblClick = sgPropDblClick
         OnMouseDown = sgMouseDown
         OnSelectCell = sgPropSelectCell
+        ExplicitHeight = 198
         ColWidths = (
           109
           120)
@@ -140,6 +145,10 @@ object CantObjDebForm: TCantObjDebForm
     end
     object TabSheet2: TTabSheet
       Caption = 'Events'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object sgEvt: TStringGrid
         Left = 0
         Top = 0
@@ -181,7 +190,7 @@ object CantObjDebForm: TCantObjDebForm
         Left = 0
         Top = 0
         Width = 266
-        Height = 198
+        Height = 196
         Align = alClient
         Color = clBtnFace
         ColCount = 2
@@ -224,7 +233,7 @@ object CantObjDebForm: TCantObjDebForm
       Left = 8
       Top = 34
       Width = 257
-      Height = 21
+      Height = 22
       Style = csDropDownList
       Sorted = True
       TabOrder = 0
@@ -234,7 +243,7 @@ object CantObjDebForm: TCantObjDebForm
       Left = 8
       Top = 8
       Width = 257
-      Height = 21
+      Height = 22
       Style = csDropDownList
       TabOrder = 1
       OnChange = cbFormsChange
@@ -244,7 +253,7 @@ object CantObjDebForm: TCantObjDebForm
     Left = 0
     Top = 65
     Width = 274
-    Height = 21
+    Height = 22
     Align = alTop
     Images = ImageList1
     LeftButton.Enabled = False
@@ -319,7 +328,7 @@ object CantObjDebForm: TCantObjDebForm
     Left = 196
     Top = 150
     Bitmap = {
-      494C0101020008003C0010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800440010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
