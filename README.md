@@ -10,6 +10,8 @@ The component is very simple. Just drop it on you `MainForm` :smile:. When you o
 
 You just have to open the desired form, choose the component and change its properties. 
 
+Alternatively, you can also use `Ctrl + Click` on any component in the application's form and the component will be automatically selected/updated in the **Object Debugger**.
+
 ## Compatibility
 
 It currently supports the following Delphi versions:
