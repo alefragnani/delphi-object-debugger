@@ -1,6 +1,6 @@
-# ObjectDebugger
+# Object Debugger
 
-The **ObjectDebugger** is a run-time Object Inspector for Delphi VCL applications
+The **Object Debugger** is a run-time Object Inspector for Delphi VCL applications
 
 > The **original project** was released by **Marco Cantù** at http://github.com/marcocantu/ObjectDebugger. Since its release in 2016, I decided to [make some contributions](https://github.com/marcocantu/ObjectDebugger/pulls/alefragnani), but most of them were not merged. So, I decided to evolve this fork.
 
@@ -22,13 +22,13 @@ It currently supports the following Delphi versions:
 
 ## Installation
 
-* Clone the repo `https://github.com/alefragnani/ObjectDebugger.git`
+* Clone the repo `https://github.com/alefragnani/delphi-object-debugger.git`
 * Open the `ObjectDebugger.dpk` package
 * Compile and Install
 
-## Support ObjectDebugger
+## Support Object Debugger
 
-While **ObjectDebugger** is free and open source, if you find it useful, please consider supporting it.
+While **Object Debugger** is free and open source, if you find it useful, please consider supporting it.
 
 I've been working on this on my spare time, and while I enjoy developing it, I would like to be able to give more attention to its growth.
 
