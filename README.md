@@ -1,3 +1,30 @@
+<p align="center">
+  <br />
+  <a title="Learn more about Object Debugger" href="http://github.com/alefragnani/delphi-object-debugger"><img src="images/delphi-object-debugger-logo-readme.png" alt="Object Debugger Logo" width="50%" /></a>
+</p>
+
+# What's new in Object Debugger 2.0.0
+
+* The project is now independent
+
+## Support
+
+**Object Debugger** is an component created for **Delphi**. If you find it useful, please consider supporting it.
+
+<table align="center" width="60%" border="0">
+  <tr>
+    <td>
+      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=delphi&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/></a>
+    </td>
+    <td>
+      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=BR&item_name=Alessandro%20Fragnani&item_number=delphi&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_SM.gif"/></a>
+    </td>
+    <td>
+      <a title="Patreon" href="https://www.patreon.com/alefragnani"><img src="images/become-a-patron-rounded.png"/></a>
+    </td>
+  </tr>
+</table>
+
 # Object Debugger
 
 The **Object Debugger** is a run-time Object Inspector for Delphi VCL applications
@@ -25,26 +52,6 @@ It currently supports the following Delphi versions:
 * Clone the repo `https://github.com/alefragnani/delphi-object-debugger.git`
 * Open the `ObjectDebugger.dpk` package
 * Compile and Install
-
-## Support Object Debugger
-
-While **Object Debugger** is free and open source, if you find it useful, please consider supporting it.
-
-I've been working on this on my spare time, and while I enjoy developing it, I would like to be able to give more attention to its growth.
-
-<table align="center" width="60%" border="0">
-  <tr>
-    <td>
-      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=US&item_name=Alessandro%20Fragnani&item_number=delphi&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"/></a>
-    </td>
-    <td>
-      <a title="Paypal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=EP57F3B6FXKTU&lc=BR&item_name=Alessandro%20Fragnani&item_number=delphi&currency_code=BRL&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/pt_BR/i/btn/btn_donate_SM.gif"/></a>
-    </td>
-    <td>
-      <a title="Patreon" href="https://www.patreon.com/alefragnani"><img src="images/become-a-patron-rounded.png"/></a>
-    </td>
-  </tr>
-</table>
 
 ---
 
